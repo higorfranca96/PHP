@@ -1,0 +1,26 @@
+<?php
+
+//pego os numeros
+$stdin = fopen("php://stdin","r");
+print("Digite o primeiro numero inteiro:\n");
+$n1 = fgets($stdin);
+
+$stdin = fopen("php://stdin","r");
+print("Digite o segundo numero inteiro:\n");
+$n2 = fgets($stdin);
+
+//verifica qual é o maior numero
+if($n1>$n2){
+    $maior = $n1;
+    $menor = $n2;
+}else{
+    $maior = $n2;
+    $menor = $n1;
+}
+
+//imprime na tela os numeros entre eles
+for($i=$menor+1;$i<$maior;$i++){
+    print("$i ");
+}
+
+?>
