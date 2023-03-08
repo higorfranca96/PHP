@@ -1,0 +1,22 @@
+<?php
+
+//$stdin = fopen("php://stdin","r");
+//$myvar = fgets($stdin);
+//fclose($stdin);
+
+///pega o numero 
+$stdin = fopen("php://stdin","r");
+print("Digite o número que deseja: \n");
+$num = fgets($stdin);
+
+///cria variavel para receber o fatorial
+$fat = 1;
+
+///faz um for para calcular o fatorial
+for($i=$num;$i>1;$i--){
+    $fat = $fat*$i;
+}
+///printa na tela o resultado
+print("Fatorial de $num = $fat");
+
+?>
