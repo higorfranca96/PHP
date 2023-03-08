@@ -1,0 +1,21 @@
+<?php
+
+//pego o numero
+$stdin = fopen("php://stdin","r");
+print("Digite um numero qualquer:\n");
+$num = fgets($stdin);
+
+//somo os algarismos dele
+$soma = 0;
+for($i=0;$i<1000;$i++){
+    if ($num[$i]>=0){ //verifico se $num[$i] existe... se não existir finalizo o laço
+        $soma = $soma + $num[$i]; 
+    }
+    else{
+        break;
+    }
+}
+
+print("Soma dos algarismos = $soma");
+
+?>
