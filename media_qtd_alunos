@@ -1,0 +1,31 @@
+<?php
+
+$idades = array();
+$i=0;
+$soma = 0;
+
+while(1){
+    
+    $stdin = fopen("php://stdin","r");
+    print("Digite uma idade ou digite -1 para sair: \n");
+    $numero = fgets($stdin);
+    
+    if($numero>0){
+        $idades[$i] = $numero;
+        $soma = $soma + $idades[$i];
+        $i++;
+    }
+    else if($numero == -1){
+        if($i>0){
+            $media = $soma/$i;
+            print("\nNúmero de alunos: $qtd_alunos \n");
+            print("Média de idade: $media");
+        }
+        else{
+            print("\nVocê não digitou nenhuma idade!");
+        }
+        break;
+    }
+}
+
+?>
