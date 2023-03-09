@@ -1,0 +1,41 @@
+<?php
+
+$numeros = array();
+$i = 1;
+$soma = 0;
+
+
+//pega os numeros do teclado e preencho o array
+while($i<11){
+    $stdin = fopen("php://stdin","r");
+    print("Digite o $i º número: \n");
+    $numeros[$i-1] = fgets($stdin);
+    $soma = $soma + $numeros[$i-1];
+    $i++;
+}
+   
+   
+//máximo e mínimo
+$max = $numeros[0];
+$min = $numeros[0];
+
+foreach($numeros as $num){
+    if($num>=$max){
+        $max = $num;
+    }
+    if($num<=$min){
+        $min = $num;
+    }
+}
+
+print("Máximo: $max \n");
+print("Mínimo: $min \n");
+
+
+//soma dos valores e média
+$media = $soma/10;
+
+print("Soma dos valores: $soma\n");
+print("Média: $media");
+
+?>
