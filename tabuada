@@ -1,0 +1,18 @@
+<?php
+
+while(1){
+    $stdin = fopen("php://stdin","r");
+    print("Digite um número inteiro entre 1 e 9: \n");
+    $num = fgets($stdin);
+    if (($num>=1)and($num<=9)){
+        break;
+    }
+    print("Você digitou um número fora do intervalo correto!\n");
+}
+
+    print("\nTABUADA DE $num\n");
+    for($i=1;$i<11;$i++){
+        $mult = $num * $i;
+        print("$num x $i = $mult \n");
+    }
+?>
