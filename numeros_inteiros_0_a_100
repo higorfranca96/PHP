@@ -1,0 +1,19 @@
+<?php
+
+while(1){
+    $stdin = fopen("php://stdin","r");
+    print("Digite um número inteiro entre 1 e 10: \n");
+    $num = fgets($stdin);
+    if (($num>=1)and($num<=10)){
+        break;
+    }
+    print("Você digitou um número fora do intervalo correto!\n");
+}
+    print("\nNÚMEROS INTEIROS DE 0 A 100:\n");
+    $i=0;
+    while($i<=100){
+        print("$i\n");
+        $i=$i+$num;
+    }
+
+?>
