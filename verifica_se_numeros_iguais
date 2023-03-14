@@ -1,0 +1,29 @@
+<?php
+
+$numeros = array();
+$z = 0;
+
+$stdin = fopen("php://stdin","r");
+print("Digite o valor de n:\n");
+$n = fgets($stdin);
+
+for($i=0;$i<$n;$i++){
+    $j = $i+1;
+    $stdin = fopen("php://stdin","r");
+    print("Digite o $j º número:\n");
+    $numeros[$i] = fgets($stdin);
+}
+
+for($i=1;$i<$n;$i++){
+    if($numeros[$i] != $numeros[0]){
+            print("\nOs números NÃO são todos iguais!");
+            $z = 1;
+            break;
+        }
+}
+
+if($z == 0){
+    print("\nOs números são todos iguais!");  
+}
+
+?>
