@@ -1,0 +1,39 @@
+<?php
+
+$numeros = array();
+$pares = 0;
+$impares = 0;
+
+//pego o valor de n
+$stdin = fopen("php://stdin","r");
+print("Digite o valor de n:\n");
+$n = fgets($stdin);
+
+//leio os numeros do teclado e preencho o array
+for($i=0;$i<$n;$i++){
+    $j = $i+1;
+    $stdin = fopen("php://stdin","r");
+    print("Digite o $j º número:\n");
+    $numeros[$i] = fgets($stdin);
+    
+    //verifico se o numero é par ou impar
+    if(($numeros[$i] % 2) == 0){
+        $pares = $pares + 1;
+    }
+    else{
+        $impares = $impares + 1;
+    }
+}
+
+//verifico se todos são pares ou impares ou há ambos
+if($pares == 0){
+    print("\nTodos os números são ímpares!");
+}
+else if($impares == 0){
+    print("\nTodos os números são pares!");
+}
+else{
+    print("\nHá números pares e ímpares!");
+}
+
+?>
