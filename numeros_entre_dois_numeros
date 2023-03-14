@@ -1,0 +1,32 @@
+<?php
+
+$numeros = array();
+
+while (1){
+    for($i=1;$i<3;$i++){
+        $stdin = fopen("php://stdin","r");
+        print("Digite o $i º número: \n");
+        $numeros[$i-1] = fgets($stdin);
+    }
+    if($numeros[0] != $numeros[1]){
+        break;
+    }
+    else{
+        print("Você digitou números iguais!\n");
+    }
+}
+
+if($numeros[0]>$numeros[1]){
+    $maior=$numeros[0];
+    $menor=$numeros[1];
+}
+else{
+    $maior=$numeros[1];
+    $menor=$numeros[0];
+}
+
+for($i=$menor+1;$i<$maior;$i++){
+    print("$i ");
+}
+
+?>
