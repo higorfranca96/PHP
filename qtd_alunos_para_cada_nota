@@ -1,0 +1,53 @@
+<?php
+
+//pede o valor de n
+$stdin = fopen("php://stdin","r");
+print("Informe a quantidade de alunos: \n");
+$n = fgets($stdin);
+
+//cria um array para receber as notas
+$notas = array();
+
+//pede as notas e só insere no array se tiverem entre 1 e 5
+for($i=0;$i<$n;$i++){
+    $aluno = $i+1;
+    $stdin = fopen("php://stdin","r");
+    print("Digite a nota do aluno $aluno:\n");
+    $nota = fgets($stdin);
+    while(($nota<1)||($nota>5)){
+        $stdin = fopen("php://stdin","r");
+        print("Digite a nota do aluno $aluno entre 1 e 5:\n");
+        $nota = fgets($stdin);
+    }
+    $notas[$i] = $nota;
+}
+
+
+$printados = array();
+$printados[0]=$notas[0];
+$x=1;
+
+//varro todo o array e verifico a quantidade de cada nota
+for($i=0;$i<$n;$i++){
+    $soma_i = 1;
+    for($z=0;$z<$n;$z++){
+        if(($notas[$i]==$notas[$z]) and ($z>$i)){
+            $soma_i = $soma_i + 1;
+        }
+    }
+    foreach($printados as $printado){
+        $j = 0;
+        if($i>0){
+            if($notas[$i]==$printado){
+                $j=$j+1;
+            }
+        }
+    }
+    if($j==0){
+        $printados[$x] = $notas[$i];
+        print("Quantidade com a nota $notas[$i] : $soma_i \n");
+        $x = $x + 1;
+    }
+}
+
+?>
