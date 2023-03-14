@@ -1,0 +1,23 @@
+<?php
+
+//crio um array vazio para receber os numeros
+$numeros = array();
+
+//variavel para contar quantos numeros sao iguais ao anterior
+$soma = 0;
+
+//lê os numeros do teclado e verifica se são iguais ao anterior
+for($i=0;$i<10;$i++){
+    $j = $i+1;
+    $stdin = fopen("php://stdin","r");
+    print("Digite o $j º número:\n");
+    $numeros[$i] = fgets($stdin);
+    
+    if(($i>0)and($numeros[$i]==$numeros[$i-1])){
+        print("Esse número é igual ao anterior!\n");
+        $soma = $soma + 1;
+    }
+}
+print("\nTotal de números iguais ao anterior: $soma");
+
+?>
